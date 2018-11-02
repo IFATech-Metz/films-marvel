@@ -1,9 +1,9 @@
     <style>
         header {
-            text-align: center,
+            text-align: center;
         }
         nav {
-            text-align: center,
+            text-align: center;
         }
     </style>
     <header>
