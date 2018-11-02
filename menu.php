@@ -21,10 +21,10 @@
     </style>
 </head>
 <body>
-    <?php
-        include("header.php");
-    ?>
     <div class="container">
+        <?php
+            include("header.php");
+        ?>
         <a href="create.php">Ajouter un film</a>
         <br/><br/>
         <table class="table table-bordered">
