@@ -6,10 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Document</title>
+    <style>
+        td {
+            vertical-align: middle !important;
+        }
+        .img {
+            text-align: center;
+            width: 175px;    
+        }
+        .img img {
+            height: 200px;
+            width: auto;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <a href="/create.php">Ajouter un film</a>
+        <a href="create.php">Ajouter un film</a>
         <br/><br/>
         <table class="table table-bordered">
             <thead>
@@ -17,6 +30,7 @@
                     <th>ID</th>
                     <th>Titre</th>
                     <th>Date</th>
+                    <th>Image</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,7 +47,11 @@
                 echo '<tr>';
                 foreach ($array as $lineContent) {
                     $line = explode($separator, $lineContent);
-                    echo '<td>' . $line[1] . '</td>';
+                    if(filter_var($line[1], FILTER_VALIDATE_URL)) {
+                        echo '<td class="img"><img src="' . $line[1] . '"></td>';
+                    } else {
+                        echo '<td>' . $line[1] . '</td>';
+                    }
                 }
                 echo '</tr>';
             }

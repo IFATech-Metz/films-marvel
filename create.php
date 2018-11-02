@@ -3,6 +3,7 @@
 if($_POST) {
     $titre = $_POST['titre'];
     $date = $_POST['date'];
+    $url = $_POST['url'];
     $separator = '<#-#>';
 
     $file_count = fopen('./filecount.txt', 'r');
@@ -15,16 +16,17 @@ if($_POST) {
     $file_id = 'id'.$separator.str_pad(($file_count_read + 1), 5, '0', STR_PAD_LEFT);
     $file_title = 'titre'.$separator.$titre;
     $file_date = 'date'.$separator.$date;
+    $file_url = 'url'.$separator.$url;
 
     $write_film = fopen('./films/' . $standard_titre . '.txt', 'w+');
-    $write_film_do = fwrite($write_film, $file_id."\r".$file_title."\r".$file_date);
+    $write_film_do = fwrite($write_film, $file_id."\r".$file_title."\r".$file_date."\r".$file_url);
     fclose($write_film);
 
     $update_films_number = fopen('./filecount.txt', 'w+');
     $update_films_number_do = fwrite($update_films_number, ($file_count_read + 1));
     fclose($update_films_number);
 
-    header('Location: /listing.php');
+    header('Location: listing.php');
    
 }
 
@@ -47,6 +49,8 @@ if($_POST) {
             <hr/>
             <label>Date</label>
             <input type="text" name="date" class="form-control">
+            <label>Image</label>
+            <input type="url" name="url" class="form-control">
             <br/>
             <input type="submit" value="Envoyer" class="btn btn-success">
         </form>
