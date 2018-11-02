@@ -21,6 +21,9 @@
     </style>
 </head>
 <body>
+    <?php
+        include("header.php");
+    ?>
     <div class="container">
         <a href="create.php">Ajouter un film</a>
         <br/><br/>
