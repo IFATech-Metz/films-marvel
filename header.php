@@ -2,6 +2,9 @@
         header {
             text-align: center;
         }
+        header h1 {
+
+        }
         nav {
             text-align: center;
         }
@@ -10,5 +13,14 @@
         <h1>Catalogue des Films Marvel</h1>
     </header>
     <nav>
-        Barre de navigation
+        Accueil
+        Catalogue
+            Création
+            Suppression
+            Modification
+        Catégories
+            Héros
+            Teams
+            Les ennemis
+        Contact  
     </nav>
