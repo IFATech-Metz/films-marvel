@@ -9,7 +9,7 @@
 	<header>
         <h1><span><span id="catalogue">Catalogue des Films</span><span id="marvel"><h3>Marvel</h3></span></span></h1>
     </header>
-    <nav>
+    <nav class="menu">
         <ul>
             <li><a href="#Accueil">Accueil</a></li>
             <li>
