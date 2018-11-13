@@ -20,5 +20,5 @@
         ?>
 
 <?php
-    // include('./includes/footer_description.php');
+     include('./includes/footer_description.php');
 ?>
