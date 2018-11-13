@@ -1,16 +1,27 @@
 @font-face {
 	font-family: "marvel";
-	src: url("./font/marvel.ttf");
+	src: url(../font/marvel.ttf);
 }
 
 @font-face {
 	font-family: "marvel_catalogue";
-	src: url("./font/American_captain.ttf")
+	src: url(../font/American_Captain.ttf);
+}
+
+html,
+body {
+	background: url(/assets/images/background.png) no-repeat;
+	background-size: cover;
 }
 
 header {
 	text-align: center;
 
+}
+
+header .logo {
+	height: 180px;
+	width: auto;
 }
 
 span {
@@ -24,10 +35,10 @@ span {
 	font-family: "marvel";
 	border: 2px solid white;
 	padding: 3px;
-	background: red;
+	background: rgba(232, 17, 39, 1);
 	color: white;
 	padding: 17.5px 10px 13.2px;
-	border: 1px solid red;
+	border: 1px solid rgba(232, 17, 39, 1);
 }
 
 #marvel h3 {
@@ -41,10 +52,10 @@ span {
 	font-family: "marvel_catalogue";
 	font-size: 26px;
 	letter-spacing: 2px;
-	color: rgb(255, 0, 0);
-	border-top: 3px solid rgb(255, 0, 0);
-	border-bottom: 3px solid rgb(255, 0, 0);
-	border-left: 3px solid red;
+	color: rgba(232, 17, 39, 1);
+	border-top: 3px solid rgba(232, 17, 39, 1);
+	border-bottom: 3px solid rgba(232, 17, 39, 1);
+	border-left: 3px solid rgba(232, 17, 39, 1);
 	padding-top: 10.5px;
 	font-size: 35px;
 	padding-bottom: 10px;
@@ -53,23 +64,23 @@ span {
 
 nav {
 	font-family: "marvel_catalogue";
-	background-color: rgb(255, 0, 0);
-	width: 850px;
+	background-color: rgba(232, 17, 39, 1);
 }
 
 .menu {
-	margin: auto;
+	margin: 0 auto 50px;
 }
 
 .menu ul {
 
-	background-color: rgb(255, 0, 0);
+	background-color: rgba(232, 17, 39, 1);
 	list-style: none;
 	display: flex;
 	flex-direction: row;
 }
 
-.menu li a {
+.menu li a,
+.menu li a:not([href]) {
 	position: relative;
 	display: block;
 	padding: 14px;
@@ -78,12 +89,15 @@ nav {
 	font-weight: bold;
 	color: white;
 	letter-spacing: 2px;
+	transition: ease .3s;
 }
 
-.menu li a:hover {
+.menu li a:hover,
+.menu li a:not([href]):hover {
 	text-decoration: none;
 	color: white;
-	background-color: rgb(255, 255, 0, 0.8);
+	background-color: rgba(241, 196, 15, 1);
+	cursor: pointer;
 }
 
 .menu li ul {
@@ -95,7 +109,31 @@ nav {
 	display: flex;
 	flex-direction: column;
 	padding-left: 0px;
-	margin margin-left: 50px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
 	z-index: 1;
+}
+
+.table-marvel thead {
+	background: rgba(232, 17, 39, 1);
+	color: white;
+	text-transform: uppercase;
+	border: 0;
+}
+.table thead th {
+	border: 2px solid rgb(134, 10, 23) !important;
+	text-align: center;
+}
+
+td {
+	vertical-align: middle !important;
+}
+
+.img {
+	text-align: center;
+	width: 175px;
+}
+
+.img img {
+	height: 200px;
+	width: auto;
 }
