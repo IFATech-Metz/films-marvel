@@ -12,7 +12,7 @@
             background-color: #ff8000;
             list-style: none;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
         }
         li a {
             position: relative;

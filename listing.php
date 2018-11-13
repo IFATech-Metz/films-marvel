@@ -49,7 +49,7 @@
                 foreach ($array as $lineContent) {
                     $line = explode($separator, $lineContent);
                     if(filter_var($line[1], FILTER_VALIDATE_URL)) {
-                        echo '<td class="img"><img src="' . $line[1] . '"></td>';
+                        echo '<td class="img"><a href="description.php?film='. $entry .'"><img src="' . $line[1] . '"></a></td>';
                     } else {
                         echo '<td>' . $line[1] . '</td>';
                     }
