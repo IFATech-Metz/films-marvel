@@ -11,14 +11,12 @@
         </thead>
         <tbody>
     <?php
-    $opendir = opendir('/data/films');
-
-    var_dump($opendir);
+    $opendir = opendir($_SERVER['DOCUMENT_ROOT'] . '/resources/movies');
 
     while ($entry = readdir($opendir)) {
         if ($entry !== '.' && $entry !== '..') {
 
-            $fileContent = file_get_contents("/data/films/" . $entry);
+            $fileContent = file_get_contents($_SERVER['DOCUMENT_ROOT'] . '/resources/movies/' . $entry);
             $separator = '<#-#>';
             $array = explode("\r", $fileContent);
 
