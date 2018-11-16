@@ -1,5 +1,7 @@
 <?php
 
+require_once('includes/header.php');
+
 if($_POST) {
     $titre = $_POST['titre'];
     $sortie = $_POST['sortie'];
@@ -34,7 +36,7 @@ if($_POST) {
 
 ?>
 
-<div class="container">
+<div class="container page-content">
     <h3>Création d'un fichier</h3>
     <form method="post">
         <label>Titre</label>
@@ -48,3 +50,5 @@ if($_POST) {
         <input type="submit" value="Envoyer" class="btn btn-success">
     </form>
 </div>
+
+<?php require_once('includes/footer.php'); ?>
