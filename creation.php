@@ -35,7 +35,7 @@ if($_POST) {
 
 ?>
 
-<div class="container page-content">
+<div class="page-content">
     <h3>Création d'un fichier</h3>
     <form method="post">
         <label>Titre</label>
