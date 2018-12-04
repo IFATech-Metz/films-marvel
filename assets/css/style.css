@@ -8,6 +8,10 @@
 	src: url(../font/American_Captain.ttf);
 }
 
+html {
+	height: 100vh;
+}
+
 html,
 body {
 	background: url(/assets/images/background.png) no-repeat;
@@ -21,8 +25,19 @@ header {
 }
 
 header .logo {
-	height: 180px;
-	width: auto;
+	max-height: 180px;
+	height: 100%;
+	width: 100%;
+}
+@media screen and (min-width: 991px) {
+	header .logo {
+		width: auto !important;
+	}
+}
+
+.container#listings {
+	padding-left: 0;
+	padding-right: 0;
 }
 
 span {
@@ -115,6 +130,24 @@ nav {
 	z-index: 1;
 }
 
+.listing-header h3 {
+	text-transform: uppercase;
+	font-weight: 700;
+	width: 100%;
+}
+.listing-header .listing-display {
+	width: 100%;
+}
+.listing-header .listing-display span {
+	color: #bbb;
+	opacity: .5;
+	cursor: pointer;
+	transition: ease .2s;
+}
+.listing-header .listing-display span.active {
+	opacity: 1;
+	color: #fff;
+}
 .table-marvel {
 	box-shadow: 0px 0px 50px -10px rgba(232, 17, 39, 0.75);
 }
@@ -133,7 +166,7 @@ nav {
 
 .table-marvel tbody .clickable-row {
 	cursor: pointer;
-	transition: ease .3s;
+	transition: ease .2s;
 }
 
 .table-marvel tbody .clickable-row:hover {
@@ -176,6 +209,9 @@ td {
 	padding: 0 !important;
 }
 
+.m-b-20 {
+	margin-bottom: 20px !important;
+}
 .description {
 	text-align: center;
 	background: rgba(0, 0, 0, .5);
