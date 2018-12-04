@@ -6,6 +6,7 @@ if($_POST) {
     $titre = $_POST['titre'];
     $sortie = $_POST['sortie'];
     $url = $_POST['url'];
+    $summary = $_POST['summary'];
     $separator = '<#-#>';
 
     $file_count = fopen('./resources/filecount.txt', 'r');
@@ -20,9 +21,10 @@ if($_POST) {
     $file_title = 'titre'.$separator.$titre;
     $file_sortie = 'sortie'.$separator. $sortie;
     $file_url = 'url'.$separator.$url;
+    $file_summary = 'summary'.$separator.$summary;
 
     $write_film = fopen('./resources/movies/' . $standard_titre . '.txt', 'w+');
-    $write_film_do = fwrite($write_film, $file_date . "\r" .$file_title."\r". $file_sortie ."\r".$file_url);
+    $write_film_do = fwrite($write_film, $file_date . "\r" .$file_title."\r". $file_sortie ."\r".$file_url."\r".$file_summary);
     fclose($write_film);
 
     $update_films_number = fopen('./resources/filecount.txt', 'w+');
@@ -44,6 +46,8 @@ if($_POST) {
         <input type="text" name="sortie" class="form-control m-b-20">
         <label>Image</label>
         <input type="url" name="url" class="form-control m-b-20">
+        <label> Résumé</label>
+        <textarea class="form-control m-b-20" name="summary" rows="6"></textarea>
         <input type="submit" value="Envoyer" class="btn btn-success">
     </form>
 </div>
