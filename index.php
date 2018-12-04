@@ -1,46 +1,14 @@
 <?php require_once('includes/header.php'); ?>
 
-<div class="container">
-    <table class="table table-bordered table-marvel">
-        <thead>
-            <tr>
-                <th>Date d'ajout</th>
-                <th>Titre</th>
-                <th>Année de sortie</th>
-                <th>Image</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php
-            $opendir = opendir('./resources/movies');
-            $movieData = [];
-            while ($entry = readdir($opendir)) {
-                if ($entry !== '.' && $entry !== '..') {
-                    $fileContent = file_get_contents('./resources/movies/' . $entry);
-                    $separator = '<#-#>';
-                    $array = explode("\r", $fileContent);
-                    $subTab = [];                
-                    foreach ($array as $lineContent) {
-                        $line = explode($separator, $lineContent);
-                        $subTab[$line[0]] = $line[1];
-                    }
-                    $movieData[$entry] = $subTab;
-                    ksort($movieData);
-                    
-                    echo '<tr class="clickable-row" data-href="description.php?film='. $entry .'">';
-                    foreach ($movieData[$entry] as $key => $value) {
-                        if(filter_var($value, FILTER_VALIDATE_URL)) {
-                            echo '<td class="img"><img src="'.$value.'"></td>';
-                        } else {
-                            echo '<td>'.$value.'</td>';
-                        }        
-                    }
-                    echo '</tr>';
-                }
-            }
-        ?>
-        </tbody>
-    </table>
+<div class="container" id="listings">
+    <div class="listing-header m-b-20 d-flex">
+        <h3>Listes des films ajoutés</h3>
+        <div class="listing-display d-flex align-items-center justify-content-end">
+            <span class="active" data-display="table"><i class="fas fa-th-list"></i></span>
+            <span data-display="items"><i class="fas fa-th-large"></i></span>
+        </div>
+    </div>
+    <div id="listing-content"></div>
 </div>
 
 <?php require_once('includes/footer.php'); ?>
