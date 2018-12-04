@@ -18,8 +18,8 @@
                 <li>
                     <a>Catalogue</a>
                     <ul class="animated flipInY">
-                        <li><a href="ajout.php">Ajout d'un film</a></li>
-                        <li><a href="">Suppression</a></li>
+                        <li><a href="/ajout.php">Ajout d'un film</a></li>
+                        <li><a href="/suppression.php">Suppression</a></li>
                         <li><a href="">Modification</a></li>
                     </ul>
                 </li>

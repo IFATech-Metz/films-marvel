@@ -40,13 +40,11 @@ if($_POST) {
     <h3>Création d'un fichier</h3>
     <form method="post">
         <label>Titre</label>
-        <input type="text" name="titre" class="form-control">
-        <hr/>
+        <input type="text" name="titre" class="form-control m-b-20">
         <label>Année de sortie</label>
-        <input type="text" name="sortie" class="form-control">
+        <input type="text" name="sortie" class="form-control m-b-20">
         <label>Image</label>
-        <input type="url" name="url" class="form-control">
-        <br/>
+        <input type="url" name="url" class="form-control m-b-20">
         <input type="submit" value="Envoyer" class="btn btn-success">
     </form>
 </div>
