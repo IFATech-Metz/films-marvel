@@ -11,29 +11,26 @@
     <header>
         <img src="/assets/images/logo.png" class="logo">
     </header>
-    <div class="container">
+    <div class="container no-padding">
         <nav class="menu">
             <ul>
-                <li><a href="/">Accueil</a></li>
+                <li><a href="index.php">Accueil</a></li>
                 <li>
                     <a>Catalogue</a>
                     <ul class="animated flipInY">
-                        <li><a href="/creation">Creation</a></li>
-                        <li><a href="#Suppression">Suppression</a></li>
-                        <li><a href="#Modification">Modification</a></li>
+                        <li><a href="creation.php">Creation</a></li>
+                        <li><a href="">Suppression</a></li>
+                        <li><a href="">Modification</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#Categories">Categories</a>
+                    <a href="">Categories</a>
                     <ul class="animated flipInY">
-                        <li><a href="#Heros">Heros</a></li>
-                        <li><a href="#Teams">Teams</a></li>
-                        <li><a href="#Ennemis">Les ennemis</a></li>
+                        <li><a href="">Heros</a></li>
+                        <li><a href="">Teams</a></li>
+                        <li><a href="">Les ennemis</a></li>
                     </ul>
                 </li>
                 <li><a href="#Contact">Contact</a></li>
             </ul>
         </nav>
-    </div>
-</body>
-</html>
