@@ -12,6 +12,10 @@ html {
 	height: 100vh;
 }
 
+body {
+	padding: 50px 0;
+}
+
 html,
 body {
 	background: url(/assets/images/background.png) no-repeat;
@@ -33,6 +37,12 @@ header .logo {
 	header .logo {
 		width: auto !important;
 	}
+}
+
+.alert.alert-success {
+	background: #04c142;
+	border-color: #04c142;
+	color: #fff;
 }
 
 .container#listings {

@@ -4,7 +4,7 @@ require_once('includes/header.php');
 
 $file = file_get_contents('./resources/movies/'.$_GET['film']);
 $separator = '<#-#>';
-$file_line = explode("\r", $file);
+$file_line = explode("\r\n", $file);
 
 $movies = [];
 
