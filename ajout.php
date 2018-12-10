@@ -18,16 +18,16 @@ if($_POST) {
     $standard_titre = str_replace(' ', '-', $standard_titre);
     $standard_titre = str_replace(':', '', $standard_titre);
     
-    $file_id = 'id'.$separator.str_pad(($file_count_read + 1), 5, '0', STR_PAD_LEFT);
-    $file_date = 'date'.$separator.date('d/m/Y - H:i:s');
-    $file_title = 'titre'.$separator.$titre;
-    $file_sortie = 'sortie'.$separator. $sortie;
-    $file_categorie = 'categorie'.$separator.$categorie;
-    $file_url = 'url'.$separator.$url;
-    $file_summary = 'summary'.$separator.$summary;
+    $file_id = "id".$separator.str_pad(($file_count_read + 1), 5, '0', STR_PAD_LEFT);
+    $file_date = "date".$separator.date('d/m/Y - H:i:s');
+    $file_title = "titre".$separator.$titre;
+    $file_sortie = "sortie".$separator. $sortie;
+    $file_categorie = "categorie".$separator.$categorie;
+    $file_url = "url".$separator.$url;
+    $file_summary = "summary".$separator.$summary;
 
     $write_film = fopen('./resources/movies/' . $standard_titre . '.txt', 'w+');
-    $write_film_do = fwrite($write_film,$file_id."\r".$file_date . "\r" .$file_title."\r". $file_sortie ."\r".$file_url."\r".$file_summary."\r".$file_categorie);
+    $write_film_do = fwrite($write_film,$file_id."\r\n".$file_date . "\r\n" .$file_title."\r\n". $file_sortie ."\r\n".$file_url."\r\n".$file_summary."\r\n".$file_categorie);
     fclose($write_film);
 
     $update_films_number = fopen('./resources/filecount.txt', 'w+');
