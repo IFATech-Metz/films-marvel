@@ -18,6 +18,7 @@ if($_POST) {
     $standard_titre = str_replace(' ', '-', $standard_titre);
     $standard_titre = str_replace(':', '', $standard_titre);
     
+    $file_id = 'id'.$separator.str_pad(($file_count_read + 1), 5, '0', STR_PAD_LEFT);
     $file_date = 'date'.$separator.date('d/m/Y - H:i:s');
     $file_title = 'titre'.$separator.$titre;
     $file_sortie = 'sortie'.$separator. $sortie;
@@ -26,14 +27,14 @@ if($_POST) {
     $file_summary = 'summary'.$separator.$summary;
 
     $write_film = fopen('./resources/movies/' . $standard_titre . '.txt', 'w+');
-    $write_film_do = fwrite($write_film, $file_date . "\r" .$file_title."\r". $file_sortie ."\r".$file_url."\r".$file_summary)."\r".$file_categorie);
+    $write_film_do = fwrite($write_film,$file_id."\r".$file_date . "\r" .$file_title."\r". $file_sortie ."\r".$file_url."\r".$file_summary."\r".$file_categorie);
     fclose($write_film);
 
     $update_films_number = fopen('./resources/filecount.txt', 'w+');
     $update_films_number_do = fwrite($update_films_number, ($file_count_read + 1));
     fclose($update_films_number);
 
-    // header('Location: /');
+    header('Location: /');
    
 }
 
