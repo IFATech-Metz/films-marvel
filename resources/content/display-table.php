@@ -10,11 +10,11 @@
     </thead>
     <tbody>
     <?php
-        $opendir = opendir('./resources/movies');
+        $opendir = opendir('../movies');
         $movieData = [];
         while ($entry = readdir($opendir)) {
             if ($entry !== '.' && $entry !== '..') {
-                $fileContent = file_get_contents('./resources/movies/' . $entry);
+                $fileContent = file_get_contents('../movies/' . $entry);
                 $separator = '<#-#>';
                 $array = explode("\r", $fileContent);
                 $subTab = [];                
