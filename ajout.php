@@ -48,7 +48,7 @@ if($_POST) {
         <label>Année de sortie</label>
         <input type="text" name="sortie" class="form-control m-b-20">
         <label>Catégories</label>
-        <input type="text" name="catégorie" class="forme-control m-b-20">
+        <input type="text" name="categorie" class="form-control m-b-20">
         <label>Image</label>
         <input type="url" name="url" class="form-control m-b-20">
         <label> Résumé</label>
