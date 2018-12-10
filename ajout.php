@@ -5,6 +5,7 @@ require_once('includes/header.php');
 if($_POST) {
     $titre = $_POST['titre'];
     $sortie = $_POST['sortie'];
+    $categorie = $_POST['categorie'];
     $url = $_POST['url'];
     $summary = $_POST['summary'];
     $separator = '<#-#>';
@@ -20,11 +21,12 @@ if($_POST) {
     $file_date = 'date'.$separator.date('d/m/Y - H:i:s');
     $file_title = 'titre'.$separator.$titre;
     $file_sortie = 'sortie'.$separator. $sortie;
+    $file_categorie = 'categorie'.$separator.$categorie;
     $file_url = 'url'.$separator.$url;
     $file_summary = 'summary'.$separator.$summary;
 
     $write_film = fopen('./resources/movies/' . $standard_titre . '.txt', 'w+');
-    $write_film_do = fwrite($write_film, $file_date . "\r" .$file_title."\r". $file_sortie ."\r".$file_url."\r".$file_summary);
+    $write_film_do = fwrite($write_film, $file_date . "\r" .$file_title."\r". $file_sortie ."\r".$file_url."\r".$file_summary)."\r".$file_categorie);
     fclose($write_film);
 
     $update_films_number = fopen('./resources/filecount.txt', 'w+');
@@ -44,6 +46,8 @@ if($_POST) {
         <input type="text" name="titre" class="form-control m-b-20">
         <label>Année de sortie</label>
         <input type="text" name="sortie" class="form-control m-b-20">
+        <label>Catégories</label>
+        <input type="text" name="catégorie" class="forme-control m-b-20">
         <label>Image</label>
         <input type="url" name="url" class="form-control m-b-20">
         <label> Résumé</label>
