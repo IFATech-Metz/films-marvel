@@ -5,12 +5,30 @@
     <script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
     <script>
         jQuery(document).ready(function($) {
-            $(".clickable-row").click(function() {
+            $(document).on('click', '.clickable-row', function() {
                 window.location = $(this).data("href");
             });
+            fetch('./resources/content/display-table.php').then((response) => {
+                return response.text()
+            }).then((data) => {
+                $('#listing-content').html(data);
+            })
             $('.listing-display span').click(function() {
                 $(this).addClass('active').siblings().removeClass('active');
                 let displayMode = $(this).data('display');
+                if(displayMode === 'table') {
+                    fetch('./resources/content/display-table.php').then((response) => {
+                        return response.text()
+                    }).then((data) => {
+                        $('#listing-content').html(data).addClass('animated fadeIn');
+                    })
+                } else if(displayMode === 'items') {
+                    fetch('./resources/content/display-items.php').then((response) => {
+                        return response.text()
+                    }).then((data) => {
+                        $('#listing-content').html(data).addClass('animated fadeIn');
+                    })
+                }
            });
         });
     </script>

@@ -10,11 +10,11 @@
     </thead>
     <tbody>
     <?php
-        $opendir = opendir('./resources/movies');
+        $opendir = opendir('../movies');
         $movieData = [];
         while ($entry = readdir($opendir)) {
             if ($entry !== '.' && $entry !== '..') {
-                $fileContent = file_get_contents('./resources/movies/' . $entry);
+                $fileContent = file_get_contents('../movies/' . $entry);
                 $separator = '<#-#>';
                 $array = explode("\r", $fileContent);
                 $subTab = [];                
@@ -27,11 +27,11 @@
                 
                 echo '<tr class="clickable-row" data-href="description.php?film='. $entry .'">';
                 foreach ($movieData[$entry] as $key => $value) {
-                    if(filter_var($value, FILTER_VALIDATE_URL)) {
+                    if(filter_var($value, FILTER_VALIDATE_URL) || substr($value, 0, 10) === "data:image") {
                         echo '<td class="img"><img src="'.$value.'"></td>';
                     } else {
                         echo '<td>'.$value.'</td>';
-                    } 
+                    }
                 }
                 echo '</tr>';
             }
