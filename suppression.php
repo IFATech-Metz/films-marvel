@@ -17,9 +17,24 @@ if($_POST) {
     header('Location: ?delete=true');
 }
 
+if(isset($_GET['direct']) && $_GET['direct'] == true && isset($_GET['film'])) {
+    $fileToDelete = $_GET['film'];
+
+    $majFilecount = file_get_contents('./resources/filecount.txt');
+    $majFilecount = intval($majFilecount);
+    $majFilecount -= $majFilecount;
+
+    $fopen = fopen('./resources/filecount.txt', 'w+');
+    $write = fwrite($fopen, $majFilecount);
+    fclose($fopen);
+    unlink('./resources/movies/'.$fileToDelete);
+
+    header('Location: index.php?delete=true');
+}
+
 ?>
 
-<?php if($_GET && $_GET['delete'] == true) { ?>
+<?php if(isset($_GET['delete']) && $_GET['delete'] == true) { ?>
 <div class="alert alert-success alert-dismissible m-b-20 animated fadeIn" role="alert">
     <strong>Succès !</strong> Le fichier à bien été supprimé.
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

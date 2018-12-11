@@ -1,3 +1,17 @@
+<?php
+function is_dir_empty($dir) {
+    $handle = opendir($dir);
+    while (false !== ($entry = readdir($handle))) {
+        if ($entry != "." && $entry != "..") {
+            closedir($handle);
+            return FALSE;
+        }
+    }
+    closedir($handle);
+    return TRUE;
+}
+
+if (!is_dir_empty('../movies')) { ?>
 <div class="row">
     <?php
         $opendir = opendir('../movies');
@@ -27,14 +41,24 @@
                         <div class="item-content animated fadeIn faster">
                             <h3 class="movie-title"><?= $movie['titre'] ?></h3>
                             <p class="movie-summary">
-                                <?php 
-                                    echo substr($movie['summary'], 0, 200)."...";
-                                ?>
+                                <?php echo substr($movie['summary'], 0, 200)."..."; ?>
                             </p>
                             <span class="movie-date">Date de sortie: 2008</span>
-                            <a href="/description.php?film=<?= $entry; ?>" class="movie-link m-t-20 d-block ml-auto mr-auto">
-                                <i class="fas fa-search-plus fa-2x"></i>
-                            </a>
+                            <div class="m-t-20 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <a href="description.php?film=<?= $entry; ?>" class="movie-link btn btn-xs btn-outline-light">
+                                        Voir la fiche
+                                    </a>
+                                </div>
+                                <div class="m-b-5">
+                                    <a href="modification.php?direct=true&film=<?= $entry; ?>" class="movie-edit m-r-5">
+                                        <i class="fas fa-pencil-alt fa-lg"></i>
+                                    </a>
+                                    <a href="suppression.php?direct=true&film=<?= $entry; ?>" class="movie-delete">
+                                        <i class="fas fa-trash-alt fa-lg"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -42,3 +66,8 @@
         }
     ?>
 </div>
+<?php } else { ?>
+    <div class="alert alert-danger text-center">
+        Le dossier <code><?= $_SERVER['DOCUMENT_ROOT']."/resources/movies"; ?></code> est vide.
+    </div>
+<?php } ?>

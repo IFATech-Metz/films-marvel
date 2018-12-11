@@ -1,9 +1,13 @@
+<?php
+    require_once('autoload.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/introjs.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Catalogue films Marvel</title>
 </head>
@@ -31,6 +35,8 @@
                         <li><a href="">Les ennemis</a></li>
                     </ul>
                 </li>
-                <li><a href="#Contact">Contact</a></li>
+                <li class="m-r-auto">
+                    <a href="">Github</a>
+                </li>
             </ul>
         </nav>
