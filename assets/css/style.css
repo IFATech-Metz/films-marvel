@@ -12,6 +12,10 @@ html {
 	height: 100vh;
 }
 
+body {
+	padding: 50px 0;
+}
+
 html,
 body {
 	background: url(/assets/images/background.png) no-repeat;
@@ -29,10 +33,28 @@ header .logo {
 	height: 100%;
 	width: 100%;
 }
+
 @media screen and (min-width: 991px) {
 	header .logo {
 		width: auto !important;
 	}
+}
+
+.alert.alert-success {
+	background: rgb(0, 200, 0);
+	border-color: rgb(0, 200, 0);
+	color: #fff;
+}
+
+.alert.alert-danger {
+	background: rgb(200, 0, 0);
+	border-color: rgb(200, 0, 0);
+	color: #fff;
+}
+
+.alert code {
+	color: #fff !important;
+	font-weight: 600;
 }
 
 .container#listings {
@@ -135,19 +157,23 @@ nav {
 	font-weight: 700;
 	width: 100%;
 }
+
 .listing-header .listing-display {
 	width: 100%;
 }
+
 .listing-header .listing-display span {
 	color: #bbb;
 	opacity: .5;
 	cursor: pointer;
 	transition: ease .2s;
 }
+
 .listing-header .listing-display span.active {
 	opacity: 1;
 	color: #fff;
 }
+
 .table-marvel {
 	box-shadow: 0px 0px 50px -10px rgba(232, 17, 39, 0.75);
 }
@@ -167,6 +193,22 @@ nav {
 .table-marvel tbody .clickable-row {
 	cursor: pointer;
 	transition: ease .2s;
+}
+.table-marvel tbody .clickable-row .movie-edit {
+	color: rgba(0, 255, 0, .75);
+	transition: ease .2s;
+	font-size: 14px;
+}
+.table-marvel tbody .clickable-row .movie-delete {
+	color: rgba(255, 0, 0, .75);
+	transition: ease .2s;
+	font-size: 14px;
+}
+.table-marvel tbody .clickable-row .movie-edit:hover {
+	color: rgba(0, 255, 0, 1);
+}
+.table-marvel tbody .clickable-row .movie-delete:hover {
+	color: rgba(255, 0, 0, 1);
 }
 
 .table-marvel tbody .clickable-row:hover {
@@ -209,12 +251,22 @@ td {
 	padding: 0 !important;
 }
 
+.m-b-5 {
+	margin-bottom: 5px;
+}
+
+.m-r-5 {
+	margin-right: 5px;
+}
+
 .m-b-20 {
 	margin-bottom: 20px !important;
 }
+
 .m-t-20 {
 	margin-top: 20px;
 }
+
 .description {
 	text-align: center;
 	background: rgba(0, 0, 0, .5);
@@ -236,6 +288,7 @@ margin-left: 5%;
 	padding: 15px;
 	min-height: 350px;
 }
+
 .movie-item .backdrop {
 	display: none;
 	position: absolute;
@@ -247,32 +300,56 @@ margin-left: 5%;
 	margin: 0 15px;
 	z-index: 10;
 }
+
 .movie-item .item-content {
 	display: none;
 	z-index: 15;
 	position: relative;
 }
+
 .movie-item .item-content h3.movie-title {
 	text-align: center;
 	text-transform: uppercase;
 	font-weight: 700;
 	margin-bottom: 15px;
+	height: 34px;
+	overflow-y: auto;
 }
+
 .movie-item .item-content span.movie-date {
 	font-style: italic;
 	color: rgba(255, 255, 255, .75);
 	font-weight: 400;
 }
+
 .movie-item .item-content p.movie-summary {
 	margin-top: 15px;
 	color: rgba(255, 255, 255, .75);
 	font-weight: 400;
 }
-.movie-item .item-content a.movie-link {
-	text-align: center;
-	color: white;
+
+.movie-item .item-content a.movie-edit {
+	text-decoration: none;
+	color: rgba(0, 200, 0, .75);
+	transition: ease .2s;
 }
-.movie-item:hover .backdrop, .movie-item:hover .item-content {
+
+.movie-item .item-content a.movie-edit:hover {
+	color: rgba(0, 200, 0, 1);
+}
+
+.movie-item .item-content a.movie-delete {
+	text-decoration: none;
+	color: rgba(200, 0, 0, .75);
+	transition: ease .2s;
+}
+
+.movie-item .item-content a.movie-delete:hover {
+	color: rgba(200, 0, 0, 1);
+}
+
+.movie-item:hover .backdrop,
+.movie-item:hover .item-content {
 	display: initial;
 >>>>>>> b5a0214124d54371f768095ceba43a1815619e23
 }
