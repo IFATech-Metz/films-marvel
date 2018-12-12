@@ -51,7 +51,7 @@ if (!is_dir_empty('../movies')) { ?>
                                     </a>
                                 </div>
                                 <div class="m-b-5">
-                                    <a href="modification.php?direct=true&film=<?= $entry; ?>" class="movie-edit m-r-5">
+                                    <a href="modification.php?film=<?= $entry; ?>" class="movie-edit m-r-5">
                                         <i class="fas fa-pencil-alt fa-lg"></i>
                                     </a>
                                     <a href="suppression.php?direct=true&film=<?= $entry; ?>" class="movie-delete">

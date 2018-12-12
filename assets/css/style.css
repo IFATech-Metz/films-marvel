@@ -40,6 +40,10 @@ header .logo {
 	}
 }
 
+.title {
+	font-size: 50px;
+}
+
 .alert.alert-success {
 	background: rgb(0, 200, 0);
 	border-color: rgb(0, 200, 0);
@@ -194,19 +198,23 @@ nav {
 	cursor: pointer;
 	transition: ease .2s;
 }
+
 .table-marvel tbody .clickable-row .movie-edit {
 	color: rgba(0, 255, 0, .75);
 	transition: ease .2s;
 	font-size: 14px;
 }
+
 .table-marvel tbody .clickable-row .movie-delete {
 	color: rgba(255, 0, 0, .75);
 	transition: ease .2s;
 	font-size: 14px;
 }
+
 .table-marvel tbody .clickable-row .movie-edit:hover {
 	color: rgba(0, 255, 0, 1);
 }
+
 .table-marvel tbody .clickable-row .movie-delete:hover {
 	color: rgba(255, 0, 0, 1);
 }
@@ -267,20 +275,6 @@ td {
 	margin-top: 20px;
 }
 
-.description {
-	text-align: center;
-	background: rgba(0, 0, 0, .5);
-	box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.75);
-	padding: 20px 35px;
-}
-
-.title {
-	font-size: 50px;
-}
-
-.description-text {
-	margin-left: 5%;
-}
 .movie-item {
 	padding: 15px;
 	height: 400px;
@@ -349,4 +343,25 @@ td {
 .movie-item:hover .backdrop,
 .movie-item:hover .item-content {
 	display: initial;
+}
+
+.description {
+	text-align: center;
+	background: rgba(0, 0, 0, .5);
+	box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.75);
+	padding: 20px 35px;
+}
+
+.description-text {
+	margin-left: 50px;
+}
+.description-text h3 {
+	font-size: 45px;
+	font-weight: 700;
+	letter-spacing: -2px;
+}
+
+.description-picture img {
+	height: 600px;
+	width: auto;
 }

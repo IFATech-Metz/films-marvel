@@ -26,16 +26,5 @@
                         <li><a href="">Modification</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="">Categories</a>
-                    <ul class="animated flipInY">
-                        <li><a href="">Heros</a></li>
-                        <li><a href="">Teams</a></li>
-                        <li><a href="">Les ennemis</a></li>
-                    </ul>
-                </li>
-                <li class="m-r-auto">
-                    <a href="">Github</a>
-                </li>
             </ul>
         </nav>
