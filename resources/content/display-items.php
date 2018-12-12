@@ -35,7 +35,7 @@ if (!is_dir_empty('../movies')) { ?>
 
                 $movie = $movieData[$entry];
                 ?>
-                <div class="col-md-3">
+                <div class="col-md-3 m-b-20">
                     <div class="movie-item" style="background: url(<?= $movie['url']; ?>);background-size: cover;">
                         <span class="backdrop animated fadeIn faster"></span>
                         <div class="item-content animated fadeIn faster">
