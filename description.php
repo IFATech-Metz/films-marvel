@@ -14,12 +14,12 @@ while(!feof($file)) {
 fclose($file)
 ?>
 <div class=page-content>
-    <div class="d-flex justify-content-around">
-        <div>
+    <div class="d-flex justify-content-between">
+        <div class="description-picture">
             <img src="<?php echo $movies['url']; ?>"/>
         </div>
-        <div class= description-text>
-            <h3 class="title"><?php echo $movies['titre']; ?></h3>
+        <div class="description-text">
+            <h3><?php echo $movies['titre']; ?></h3>
             <h4>Date de sortie : <?php echo $movies['sortie']; ?></h4>
             <p><?php echo $movies['summary']; ?></p>
         </div>

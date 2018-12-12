@@ -8,6 +8,20 @@
                 <span aria-hidden="true"><i class="fas fa-times"></i></span>
             </button>
         </div>
+    <?php } if(isset($_GET['edit']) && $_GET['edit'] == true) { ?>
+        <div class="alert alert-success alert-dismissible m-b-20 animated fadeIn" role="alert">
+            <strong>Succès !</strong> Le fichier à bien été modifié.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+        </div>
+    <?php } if(isset($_GET['added']) && $_GET['added'] == true) { ?>
+        <div class="alert alert-success alert-dismissible m-b-20 animated fadeIn" role="alert">
+            <strong>Succès !</strong> Le fichier à bien été ajouté.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+        </div>
     <?php } ?>
 
     <div class="listing-header m-b-20 d-flex">

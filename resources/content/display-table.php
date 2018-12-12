@@ -37,8 +37,6 @@ if (!is_dir_empty('../movies')) { ?>
                         $subTab[$line[0]] = $line[1];
                     }
                     $movieData[$entry] = $subTab;
-                    ksort($movieData);
-
                     $excluded = [
                         "summary", "categorie"
                     ];
@@ -54,7 +52,7 @@ if (!is_dir_empty('../movies')) { ?>
                                     <td>
                                         '.$value.'
                                         <div class="action-table d-flex justify-content-around align-items-center m-t-20">
-                                            <a href="modification.php?direct=true&film='.$entry.'" class="movie-edit"><i class="fas fa-pencil-alt fa-lg"></i></a>
+                                            <a href="modification.php?film='.$entry.'" class="movie-edit"><i class="fas fa-pencil-alt fa-lg"></i></a>
                                             <a href="suppression.php?direct=true&film='.$entry.'" class="movie-delete"><i class="fas fa-trash-alt fa-lg"></i></a>
                                         </div>
                                     </td>';
