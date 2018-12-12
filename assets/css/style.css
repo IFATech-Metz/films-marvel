@@ -278,12 +278,9 @@ td {
 	font-size: 50px;
 }
 
-<<<<<<< HEAD
 .description-text {
-
-margin-left: 5%;
-
-=======
+	margin-left: 5%;
+}
 .movie-item {
 	padding: 15px;
 	min-height: 350px;
@@ -351,5 +348,4 @@ margin-left: 5%;
 .movie-item:hover .backdrop,
 .movie-item:hover .item-content {
 	display: initial;
->>>>>>> b5a0214124d54371f768095ceba43a1815619e23
 }

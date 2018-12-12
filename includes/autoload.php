@@ -12,3 +12,6 @@ if(!file_exists($_SERVER['DOCUMENT_ROOT']."/resources/filecount.txt")) {
     fwrite($handle, "0");
     fclose($handle);
 }
+if(file_exists($_SERVER['DOCUMENT_ROOT']."/resources/movies/.directory")) {
+    unlink($_SERVER['DOCUMENT_ROOT']."/resources/movies/.directory");
+}
