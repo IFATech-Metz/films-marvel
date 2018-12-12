@@ -3,32 +3,50 @@
 require_once('includes/header.php');
 
 if($_POST) {
+    $separator = '<#-#>';
+
     $titre = $_POST['titre'];
+    $titre = str_replace("\r\n", "", $titre);
     $sortie = $_POST['sortie'];
+    $sortie = str_replace("\r\n", "", $sortie);
     $categorie = $_POST['categorie'];
+    $categorie = str_replace("\r\n", "", $categorie);
     $url = $_POST['url'];
+    $url = str_replace("\r\n", "", $url);
     $summary = $_POST['summary'];
     $summary = str_replace("\r\n", "", $summary);
-    $separator = '<#-#>';
+    $trailer = $_POST['trailer'];
+    $trailer = str_replace("\r\n", "", $trailer);
 
     $file_count = fopen('./resources/filecount.txt', 'r');
     $file_count_read = fgets($file_count);
     fclose($file_count);
 
-    $standard_titre = strtolower($titre);
-    $standard_titre = str_replace(' ', '-', $standard_titre);
-    $standard_titre = str_replace(':', '', $standard_titre);
+    $file_title = strtolower($titre);
+    $file_title = str_replace(' ', '_', $file_title);
+    $file_title = str_replace(':', '', $file_title);
+    $file_title = str_replace(`'`, '', $file_title);
     
-    $file_id = "id".$separator.str_pad(($file_count_read + 1), 5, '0', STR_PAD_LEFT);
-    $file_date = "date".$separator.date('d/m/Y - H:i:s');
-    $file_title = "titre".$separator.$titre;
-    $file_sortie = "sortie".$separator. $sortie;
-    $file_categorie = "categorie".$separator.$categorie;
-    $file_url = "url".$separator.$url;
-    $file_summary = "summary".$separator.$summary;
+    $movie_id = "id".$separator.str_pad(($file_count_read + 1), 5, '0', STR_PAD_LEFT);
+    $movie_date = "date".$separator.date('d/m/Y - H:i:s');
+    $movie_title = "titre".$separator.$titre;
+    $movie_release = "sortie".$separator. $sortie;
+    $movie_categorie = "categorie".$separator.$categorie;
+    $movie_url = "url".$separator.$url;
+    $movie_summary = "summary".$separator.$summary;
+    $movie_trailer = "trailer".$separator.$trailer;
 
-    $write_film = fopen('./resources/movies/' . $standard_titre . '.txt', 'w+');
-    $write_film_do = fwrite($write_film,$file_id."\r\n".$file_date . "\r\n" .$file_title."\r\n". $file_sortie ."\r\n".$file_url."\r\n".$file_summary."\r\n".$file_categorie);
+    $write_film = fopen('./resources/movies/' . $file_title . '.txt', 'w+');
+    $write_film_do = fwrite($write_film, 
+        $movie_id."\r\n"
+        .$movie_date."\r\n"
+        .$file_title."\r\n"
+        .$movie_categorie."\r\n"
+        .$movie_release."\r\n"
+        .$movie_url."\r\n"
+        .$movie_summary."\r\n"
+        .$movie_trailer
+    );
     fclose($write_film);
 
     $update_films_number = fopen('./resources/filecount.txt', 'w+');
@@ -51,20 +69,28 @@ if($_POST) {
             </div>
             <div class="col-md-6">
                 <label>Année de sortie</label>
-                <input type="text" name="sortie" class="form-control m-b-20">
+                <input type="text" placeholder="2000" name="sortie" class="form-control m-b-20">
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
-                <label>Catégories</label>
-                <input type="text" name="categorie" class="form-control m-b-20">
+            <div class="col-md-4">
+                <label>Catégorie</label>
+                <select class="form-control m-b-20 selectpicker show-tick" title="Choisissez une catégorie...">
+                    <option value="Teams">Teams</option>
+                    <option value="Heros">Héros unique</option>
+                    <option value="Vilains">Vilains</option>
+                </select>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <label>Image</label>
-                <input type="url" name="url" class="form-control m-b-20">
+                <input type="url" placeholder="Entrez une URL" name="url" class="form-control m-b-20">
+            </div>
+            <div class="col-md-4">
+                <label>Bande-annonce</label>
+                <input type="url" placeholder="Entrez une URL" name="trailer" class="form-control m-b-20">
             </div>
         </div>
-        <label> Résumé</label>
+        <label>Résumé</label>
         <textarea class="form-control m-b-20" name="summary" rows="6"></textarea>
         <input type="submit" value="Envoyer" class="btn btn-success">
     </form>

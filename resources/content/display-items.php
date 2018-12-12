@@ -13,7 +13,7 @@ function is_dir_empty($dir) {
 
 if (!is_dir_empty('../movies')) { ?>
 <div class="row">
-    <?php
+    <?php 
         $opendir = opendir('../movies');
         $movieData = [];
         while ($entry = readdir($opendir)) {
@@ -43,7 +43,7 @@ if (!is_dir_empty('../movies')) { ?>
                             <p class="movie-summary">
                                 <?php echo substr($movie['summary'], 0, 200)."..."; ?>
                             </p>
-                            <span class="movie-date">Date de sortie: 2008</span>
+                            <span class="movie-date">Date de sortie: <?= $movie['sortie']; ?></span>
                             <div class="m-t-20 d-flex justify-content-between align-items-center">
                                 <div>
                                     <a href="description.php?film=<?= $entry; ?>" class="movie-link btn btn-xs btn-outline-light">

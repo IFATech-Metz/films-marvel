@@ -15,11 +15,12 @@ if (!is_dir_empty('../movies')) { ?>
     <table class="table table-bordered table-marvel">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Date d'ajout</th>
-                <th>Titre</th>
-                <th>Année de sortie</th>
-                <th>Image</th>
+                <th class="align-middle">ID</th>
+                <th class="align-middle">Date d'ajout</th>
+                <th class="align-middle">Titre</th>
+                <th class="align-middle">Catégorie</th>
+                <th class="align-middle">Année de sortie</th>
+                <th class="align-middle">Image</th>
             </tr>
         </thead>
         <tbody>
@@ -37,33 +38,30 @@ if (!is_dir_empty('../movies')) { ?>
                         $subTab[$line[0]] = $line[1];
                     }
                     $movieData[$entry] = $subTab;
+                    ksort($movieData);
+
                     $excluded = [
-                        "summary", "categorie"
+                        "categorie"
                     ];
 
-                    echo '<tr class="clickable-row" data-href="description.php?film='. $entry .'">';
-                    foreach ($movieData[$entry] as $key => $value) {
-                        if(!in_array($key, $excluded)) {
-                            if(filter_var($value, FILTER_VALIDATE_URL) || substr($value, 0, 10) === "data:image") {
-                                echo '<td class="img"><img src="'.$value.'"></td>';
-                            } else {
-                                if($key === "id") {
-                                    echo '
-                                    <td>
-                                        '.$value.'
-                                        <div class="action-table d-flex justify-content-around align-items-center m-t-20">
-                                            <a href="modification.php?film='.$entry.'" class="movie-edit"><i class="fas fa-pencil-alt fa-lg"></i></a>
-                                            <a href="suppression.php?direct=true&film='.$entry.'" class="movie-delete"><i class="fas fa-trash-alt fa-lg"></i></a>
-                                        </div>
-                                    </td>';
-                                } else {
-                                    echo '<td>'.$value.'</td>';
-                                }
-                            }
-                        }
-                    }
-                    echo '</tr>';
-                }
+                    $movie = $movieData[$entry];
+            ?>
+
+                <tr class="clickable-row" data-href="description.php?film=<?= $entry; ?>">
+                    <td>
+                        <?= $movie['id']; ?>
+                        <div class="action-table d-flex justify-content-around align-items-center m-t-20">
+                            <a href="modification.php?film=<?= $entry; ?>" class="movie-edit"><i class="fas fa-pencil-alt fa-lg"></i></a>
+                            <a href="suppression.php?direct=true&film=<?= $entry; ?>" class="movie-delete"><i class="fas fa-trash-alt fa-lg"></i></a>
+                        </div>
+                    </td>
+                    <td><?= $movie['date']; ?></td>
+                    <td><?= $movie['titre']; ?></td>
+                    <td><?= $movie['categorie']; ?></td>
+                    <td><?= $movie['sortie']; ?></td>
+                    <td class="img"><img src="<?= $movie['url']; ?>" alt="Affiche de <?= $movie['titre']; ?>"></td>
+                </tr>
+                <?php }
             }
         ?>
         </tbody>

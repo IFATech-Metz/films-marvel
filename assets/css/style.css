@@ -8,6 +8,10 @@
 	src: url(../font/American_Captain.ttf);
 }
 
+* {
+	outline: none;
+}
+
 html {
 	height: 100vh;
 }
@@ -70,7 +74,7 @@ header .logo {
 	padding-right: 0;
 }
 
-span {
+.listing-display span {
 	padding-right: 2.5%;
 	padding-left: 2.5%;
 	padding-bottom: 0.75%;
@@ -374,3 +378,21 @@ td {
 	height: 600px;
 	width: auto;
 }
+
+.btn-youtube {
+	background: #FFFFFF;
+	border-color: #FFFFFF;
+	color: #282828;
+}
+.btn-youtube:hover {
+	color: #FF0000;
+}
+
+.modal.fade .modal-dialog {
+	-webkit-transition: -webkit-transform 0.3s ease-out;
+	-moz-transition: -moz-transform 0.3s ease-out;
+	-o-transition: -o-transform 0.3s ease-out;
+	transition: transform 0.3s ease-out;
+}
+
+.modal.in .modal-dialog {}
