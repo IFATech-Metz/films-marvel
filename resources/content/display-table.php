@@ -73,3 +73,13 @@ if (!is_dir_empty('../movies')) { ?>
         Le dossier <code><?= $_SERVER['DOCUMENT_ROOT']."/resources/movies"; ?></code> est vide.
     </div>
 <?php } ?>
+<script>
+$(document).ready( function () {
+    $('.table-marvel').DataTable({
+        paging: true,
+        "language": {
+            "url": "https://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/French.json"
+        }
+    });
+});
+</script>

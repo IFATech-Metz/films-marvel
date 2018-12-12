@@ -40,6 +40,10 @@ header .logo {
 	}
 }
 
+.table-bordered {
+	border: 0 !important;
+}
+
 .title {
 	font-size: 50px;
 }
@@ -355,6 +359,7 @@ td {
 .description-text {
 	margin-left: 50px;
 }
+
 .description-text h3 {
 	font-size: 45px;
 	font-weight: 700;
