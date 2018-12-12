@@ -267,6 +267,10 @@ td {
 	padding: 0 !important;
 }
 
+.p-r-0 {
+	padding-right: 0 !important;
+}
+
 .m-b-5 {
 	margin-bottom: 5px;
 }
@@ -301,7 +305,7 @@ td {
 	right: 0;
 	background: rgba(0, 0, 0, .75);
 	margin: 0 15px;
-	z-index: 10;
+	z-index: auto;
 	height: 400px;
 }
 
@@ -315,9 +319,10 @@ td {
 	text-align: center;
 	text-transform: uppercase;
 	font-weight: 700;
-	margin-bottom: 15px;
-	height: 34px;
-	overflow-y: auto;
+	margin-bottom: 30px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 }
 
 .movie-item .item-content span.movie-date {
@@ -330,6 +335,8 @@ td {
 	margin-top: 15px;
 	color: rgba(255, 255, 255, .75);
 	font-weight: 400;
+	height: 200px;
+	overflow: auto;
 }
 
 .movie-item .item-content a.movie-edit {

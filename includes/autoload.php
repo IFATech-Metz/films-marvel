@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Useful function for project
  */

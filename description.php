@@ -11,7 +11,9 @@ while(!feof($file)) {
     $file_line_content = explode($separator, $file_line);
     $movies[$file_line_content[0]] = $file_line_content[1];
 }
-fclose($file)
+fclose($file);
+
+$movieInfoFromDB = getMovieData($movies['titre'], $movies['sortie']);
 ?>
 <div class=page-content>
     <div class="d-flex justify-content-between">
@@ -22,6 +24,7 @@ fclose($file)
             <div class="movie-infos">
                 <h3><?php echo $movies['titre']; ?></h3>
                 <h4>Date de sortie : <?php echo $movies['sortie']; ?></h4>
+                <h5>Revenus: <?= number_format($movieInfoFromDB['infos']['revenue'], 2, '.', ' ')."€"; ?></h5>
                 <p><?php echo $movies['summary']; ?></p>
             </div>
             <div class="movie-link">
