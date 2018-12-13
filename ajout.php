@@ -75,7 +75,7 @@ if($_POST) {
         <div class="row">
             <div class="col-md-4">
                 <label>Catégorie</label>
-                <select class="form-control m-b-20 selectpicker show-tick" title="Choisissez une catégorie...">
+                <select class="form-control m-b-20 selectpicker show-tick" name="categorie" title="Choisissez une catégorie...">
                     <option value="Teams">Teams</option>
                     <option value="Heros">Héros unique</option>
                     <option value="Vilains">Vilains</option>
