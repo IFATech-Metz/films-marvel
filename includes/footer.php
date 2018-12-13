@@ -7,7 +7,7 @@
     <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.3/js/i18n/defaults-fr_FR.min.js"></script>
-    <script src="../assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
     <script>
         jQuery(document).ready(function($) {
             $('[data-toggle="tooltip"]').tooltip();
