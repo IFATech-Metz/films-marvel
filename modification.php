@@ -94,8 +94,8 @@ if(isset($_POST) && isset($_POST['modify']) && $_GET['film']) {
                 <input type="url" name="url" value="<?= $movies['url']; ?>" class="form-control m-b-20">
             </div>
             <div class="col-md-4">
-                <label>Bande-annonce</label>
-                <input type="url" name="trailer" value="<?= $movies['trailer']; ?>" class="form-control m-b-20">
+                <label>Bande-annonce (Jeton vidéo YouTube)</label>
+                <input type="text" name="trailer" value="<?= $movies['trailer']; ?>" class="form-control m-b-20">
             </div>
         </div>
         <label>Résumé</label>
