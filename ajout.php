@@ -40,7 +40,7 @@ if($_POST) {
     $write_film_do = fwrite($write_film, 
         $movie_id."\r\n"
         .$movie_date."\r\n"
-        .$file_title."\r\n"
+        .$movie_title."\r\n"
         .$movie_categorie."\r\n"
         .$movie_release."\r\n"
         .$movie_url."\r\n"
