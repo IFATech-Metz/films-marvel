@@ -16,8 +16,10 @@ if(isset($_GET) && isset($_GET['film'])) {
 
     $movies['id'] = str_replace("\r\n", "", $movies['id']);
 }
-
-if($_POST && $_GET['film']) {
+if(isset($_POST) && isset($_POST['redirectToMovie'])) {
+    header('Location: modification.php?film='.$_POST['entry']);
+}
+if(isset($_POST) && isset($_POST['modify']) && $_GET['film']) {
     $separator = '<#-#>';
 
     $titre = $_POST['titre'];
@@ -98,7 +100,7 @@ if($_POST && $_GET['film']) {
         </div>
         <label>Résumé</label>
         <textarea class="form-control m-b-20" name="summary" rows="6"><?= $movies['summary']; ?></textarea>
-        <input type="submit" value="Envoyer" class="btn btn-success">
+        <input type="submit" name="modify" value="Envoyer" class="btn btn-success">
     </form>
 </div>
 <?php } else { ?>
@@ -114,12 +116,12 @@ if($_POST && $_GET['film']) {
                     $beautifyEntry = str_replace('-', ' ', $entry);
                     $beautifyEntry = str_replace('.txt', '', $beautifyEntry);
                     $beautifyEntry = ucwords($beautifyEntry);
-                    echo '<option value="'. $entry .'" onclick="window.location = "modification.php?film=' . $entry . '">'. $beautifyEntry .'</option>';
+                    echo '<option value="'. $entry .'">'. $beautifyEntry .'</option>';
                 }
             }
             ?>
         </select>
-        <input type="submit" value="Envoyer" class="btn btn-success">
+        <input type="submit" name="redirectToMovie" value="Envoyer" class="btn btn-success">
     </form> 
 </div>
 <?php } ?>
