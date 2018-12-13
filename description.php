@@ -74,6 +74,6 @@ $movieInfoFromDB = getMovieData($movies['titre'], $movies['sortie']);
         });
     })
     $('#trailer-video-trigger').click(function() {
-        $('#trailer-video').html('<iframe src="https://www.youtube.com/embed/<?php $movies['trailer']; ?>?autoplay=1&showinfo=0&modestbranding=1&controls=0" frameborder="0" allowfullscreen style="height: 100%"></iframe>')
+        $('#trailer-video').html('<iframe src="https://www.youtube.com/embed/<?php echo $movies['trailer']; ?>?autoplay=1&showinfo=0&modestbranding=1&controls=0" frameborder="0" allowfullscreen style="height: 100%"></iframe>')
     });
 </script>
