@@ -86,8 +86,8 @@ if($_POST) {
                 <input type="url" placeholder="Entrez une URL" name="url" class="form-control m-b-20">
             </div>
             <div class="col-md-4">
-                <label>Bande-annonce</label>
-                <input type="url" placeholder="Entrez une URL" name="trailer" class="form-control m-b-20">
+                <label>Bande-annonce (Jeton vidéo YouTube) <i class="fas fa-question-circle m-l-5" data-container="body" data-toggle="popover" data-trigger="hover" data-html="true" data-placement="top" data-content="<img src='./assets/images/helper_youtube.png'>"></i></label>
+                <input type="text" name="trailer" value="<?= @$movies['trailer']; ?>" class="form-control m-b-20" required>
             </div>
         </div>
         <label>Résumé</label>
