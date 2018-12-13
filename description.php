@@ -69,11 +69,10 @@ $movieInfoFromDB = getMovieData($movies['titre'], $movies['sortie']);
             loop: true,
             margin: 25,
             autoplay: true,
-            autoplayTimeout: 3000,
-            autoplayHoverPause: true
+            autoplayTimeout: 2500,
         });
     })
     $('#trailer-video-trigger').click(function() {
-        $('#trailer-video').html('<iframe src="https://www.youtube.com/embed/<?php echo $movies['trailer']; ?>?autoplay=1&showinfo=0&modestbranding=1&controls=0" frameborder="0" allowfullscreen style="height: 100%"></iframe>')
+        $('#trailer-video').html('<iframe src="https://www.youtube.com/embed/<?php echo $movies['trailer']; ?>?autoplay=1&iv_load_policy=3&showinfo=0&modestbranding=1&controls=0" frameborder="0" allowfullscreen style="height: 100%"></iframe>')
     });
 </script>

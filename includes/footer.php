@@ -11,6 +11,7 @@
     <script>
         jQuery(document).ready(function($) {
             $('[data-toggle="tooltip"]').tooltip();
+              $('[data-toggle="popover"]').popover();
             $(document).on('click', '.clickable-row', function() {
                 window.location = $(this).data("href");
             });

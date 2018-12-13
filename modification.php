@@ -73,17 +73,17 @@ if(isset($_POST) && isset($_POST['modify']) && $_GET['film']) {
         <div class="row">
             <div class="col-md-6">
                 <label>Titre</label>
-                <input type="text" name="titre" value="<?= $movies['titre']; ?>" class="form-control m-b-20">
+                <input type="text" name="titre" value="<?= @$movies['titre']; ?>" class="form-control m-b-20" required>
             </div>
             <div class="col-md-6">
                 <label>Année de sortie</label>
-                <input type="text" name="sortie" value="<?= $movies['sortie']; ?>" class="form-control m-b-20">
+                <input type="text" name="sortie" value="<?= @$movies['sortie']; ?>" class="form-control m-b-20" required>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4">
                 <label>Catégorie</label>
-                <select class="form-control m-b-20 selectpicker show-tick" name="categorie" title="<?= $movies['categorie']; ?>">
+                <select class="form-control m-b-20 selectpicker show-tick" name="categorie" title="<?= $movies['categorie']; ?>" required>
                     <option value="Teams" <?php echo $movies['categorie'] == 'Teams' ? 'selected' : null ?>>Teams</option>
                     <option value="Heros" <?php echo $movies['categorie'] == 'Heros' ? 'selected' : null ?>>Héros unique</option>
                     <option value="Vilains" <?php echo $movies['categorie'] == 'Vilains' ? 'selected' : null ?>>Vilains</option>
@@ -91,15 +91,15 @@ if(isset($_POST) && isset($_POST['modify']) && $_GET['film']) {
             </div>
             <div class="col-md-4">
                 <label>Image</label>
-                <input type="url" name="url" value="<?= $movies['url']; ?>" class="form-control m-b-20">
+                <input type="url" name="url" value="<?= @$movies['url']; ?>" class="form-control m-b-20" required>
             </div>
             <div class="col-md-4">
-                <label>Bande-annonce (Jeton vidéo YouTube)</label>
-                <input type="text" name="trailer" value="<?= $movies['trailer']; ?>" class="form-control m-b-20">
+                <label>Bande-annonce (Jeton vidéo YouTube) <i class="fas fa-question-circle m-l-5" data-container="body" data-toggle="popover" data-trigger="hover" data-html="true" data-placement="top" data-content="<img src='./assets/images/helper_youtube.png'>"></i></label>
+                <input type="text" name="trailer" value="<?= @$movies['trailer']; ?>" class="form-control m-b-20" required>
             </div>
         </div>
         <label>Résumé</label>
-        <textarea class="form-control m-b-20" name="summary" rows="6"><?= $movies['summary']; ?></textarea>
+        <textarea class="form-control m-b-20" name="summary" rows="6" required><?= @$movies['summary']; ?></textarea>
         <input type="submit" name="modify" value="Envoyer" class="btn btn-success">
     </form>
 </div>
@@ -108,7 +108,7 @@ if(isset($_POST) && isset($_POST['modify']) && $_GET['film']) {
     <h3> Modification d'un fichier</h3>
     <form method="POST">
         <label>Titre</label>
-        <select name="entry" class="form-control show-tick selectpicker m-b-20" data-live-search="true" data-size="8" title="Choisissez un film...">
+        <select name="entry" class="form-control show-tick selectpicker m-b-20" required data-live-search="true" data-size="8" title="Choisissez un film...">
             <?php
             $opendir = opendir('./resources/movies');
             while ($entry = readdir($opendir)) {
