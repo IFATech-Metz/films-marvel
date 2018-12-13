@@ -38,10 +38,10 @@ if (!is_dir_empty('../movies')) { ?>
                 <div class="col-md-3 m-b-20">
                     <div class="movie-item" style="background: url(<?= $movie['url']; ?>);background-size: cover;">
                         <span class="backdrop animated fadeIn faster"></span>
-                        <div class="item-content animated fadeIn faster">
+                        <div class="item-content faster">
                             <h3 class="movie-title"><?= $movie['titre'] ?></h3>
                             <p class="movie-summary">
-                                <?php echo substr($movie['summary'], 0, 200)."..."; ?>
+                                <?php echo $movie['summary']."..."; ?>
                             </p>
                             <span class="movie-date">Date de sortie: <?= $movie['sortie']; ?></span>
                             <div class="m-t-20 d-flex justify-content-between align-items-center">
