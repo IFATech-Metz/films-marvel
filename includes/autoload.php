@@ -4,7 +4,7 @@
  */
 
 if(!file_exists($_SERVER['DOCUMENT_ROOT']."/resources/movies")) {
-    mkdir($_SERVER['DOCUMENT_ROOT']."/resources/movies", 0777, true);
+    @mkdir($_SERVER['DOCUMENT_ROOT']."/resources/movies", 0777, true);
 }
 if(!file_exists($_SERVER['DOCUMENT_ROOT']."/resources/filecount.txt")) {
     $handle = fopen($_SERVER['DOCUMENT_ROOT']."/resources/filecount.txt", "w+");
